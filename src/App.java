@@ -54,7 +54,19 @@ class Child implements Father, Mom {
 }
 
 public class App {
-    
+
+    static class Grandpa {
+        boolean play = true;
+    }
+
+    static class Father extends Grandpa {
+        boolean drive = false;
+    }
+
+    static class Me extends Father {
+        boolean study = false;
+    }
+
     public static void main(String[] args) throws Exception {
         /*
          * // Multilevel inheritance test
@@ -84,8 +96,16 @@ public class App {
         // System.out.println(a);
         // System.out.println(b);
         // System.out.println(c);
-        Animal animal = new Dog();
-        animal.speak();
+        // Animal animal = new Dog();
+        // animal.speak();
+
+        Me me = new Me();
+        boolean a = me.drive;
+        boolean b = me.play;
+        boolean c = me.study;
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
 
     }
 }
